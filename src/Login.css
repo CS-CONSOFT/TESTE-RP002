@@ -1,0 +1,18 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centralizar horizontalmente */
+    justify-content: center;
+    /* Centralizar verticalmente */
+    height: 100vh;
+    /* Tornar o contêiner ocupar toda a altura da tela */
+}
+
+.login-container {
+    /* Adicione estilos adicionais para o contêiner do formulário, se necessário */
+}
+
+.login-content {
+    text-align: center;
+}

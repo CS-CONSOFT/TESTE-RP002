@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import Header from '../submodule/COMPONENTES/src/Componente_Header';
+import Header from './submodule/COMPONENTE/src/Componente_Header';
+import './Login.css'; // Importe o arquivo CSS para aplicar estilos
 
 function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -8,8 +8,6 @@ function Login() {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Verificar credenciais aqui
-    // Simplesmente vamos verificar se ambos username e password estão preenchidos
     if (username && password) {
       setLoggedIn(true);
     } else {
@@ -18,28 +16,32 @@ function Login() {
   };
 
   if (loggedIn) {
-    return <Redirect to="/frutas" />;
+    console.log('ok');
   }
 
   return (
-    <div>
-      <div>
-        <Header />
+    <div className="login-page">
+      <Header />
+
+      <div className="login-container">
+
+        <div className="login-content">
+          <h2>Tela de Login</h2>
+          <form>
+            <label>
+              Usuário:
+              <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            </label>
+            <br />
+            <label>
+              Senha:
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </label>
+            <br />
+            <button type="button" onClick={handleLogin}>Login</button>
+          </form>
+        </div>
       </div>
-      <h2>Tela de Login</h2>
-      <form>
-        <label>
-          Usuário:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Senha:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <br />
-        <button type="button" onClick={handleLogin}>Login</button>
-      </form>
     </div>
   );
 }
