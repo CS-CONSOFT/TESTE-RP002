@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import Header from '../submodule/COMPONENTES/src/Componente_Header';
 
 function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -22,6 +23,9 @@ function Login() {
 
   return (
     <div>
+      <div>
+        <Header />
+      </div>
       <h2>Tela de Login</h2>
       <form>
         <label>
